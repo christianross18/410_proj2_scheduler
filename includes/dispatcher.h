@@ -14,7 +14,7 @@
 
 class Dispatcher {
 public:
-	Dispatcher(CPU &cpu):cpu(&cpu),is_valid_job_on_cpu(false){};
+	Dispatcher(CPU &cpu):cpu(&cpu),is_valid_job_on_cpu(false){}
 	virtual ~Dispatcher(){};
 
 	//pull current process (if any) off CPU and return it
