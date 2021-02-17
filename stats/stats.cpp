@@ -9,8 +9,9 @@
 #include "../includes/stats.h"
 
 Stats::Stats(std::vector<PCB> &finished_vector){
-	*vec = finished_vector;
+	vec = &finished_vector;
 	calcStats();
+
 }
 
 void Stats::showAllProcessInfo(){
@@ -32,8 +33,8 @@ float Stats::get_av_wait_time(){
 	return av_wait_time;
 }
 void Stats::calcStats(){
-	int total_strt, total_arvl, total_fin, total_cpu  = 0;
-	int total_proc =0;
+	float total_strt =0, total_arvl =0, total_fin=0, total_cpu  = 0;
+	float total_proc =0;
 	for(PCB a : *vec){
 		total_strt+= a.start_time;
 		total_arvl+= a.arrival_time;
